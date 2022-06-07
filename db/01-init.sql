@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS profile (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS organizations (
     id serial primary key,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS organizations (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS organizations_users (
     id serial primary key,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS organizations_users (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS organizations_users_roles (
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS organizations_users_roles (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS roles (
     id serial primary key,
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS roles (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS roles_permissions (
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS roles_permissions (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS permissions (
     id serial primary key,
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS permissions (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS departments (
     id serial primary key,
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS departments (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS departments_users (
     id serial primary key,
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS departments_users (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS expense_categories (
     id serial primary key,
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS expense_categories (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS currencies (
     id serial primary key,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS currencies (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS projects (
     id serial primary key,
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS projects (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS projects_log (
     id serial primary key,
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS projects_log (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS project_details (
     id serial primary key,
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS project_details (
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS expense(
     id serial primary key,
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS expense(
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS merchant(
     id serial primary key,
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS merchant(
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS project_expense(
@@ -229,4 +229,4 @@ CREATE TABLE IF NOT EXISTS project_expense(
     created_at timestamp default CURRENT_TIMESTAMP,
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
-)
+);
