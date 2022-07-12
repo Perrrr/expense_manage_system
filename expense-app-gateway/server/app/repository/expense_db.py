@@ -11,10 +11,10 @@ from app.models import expense as expense_model
 async def create_expense(expense: expense_model.Expense):
     con = await create_connection()
     statement = await con.fetch(
-        "INSERT INTO expense (public_id,expense_category_id,cliam_reimbursement,description,reference_number,currency_id,merchant_id,amount,user_id,created_at,updated_at,deleted_at) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) RETURNING id",
+        "INSERT INTO expense (public_id,expense_category_id,claim_reimbursement,description,reference_number,currency_id,merchant_id,amount,user_id,created_at,updated_at,deleted_at) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) RETURNING id",
         str(uuid.uuid4()),
         expense.expense_category_id,
-        expense.cliam_reimbursement,
+        expense.claim_reimbursement,
         expense.description,
         expense.reference_number,
         expense.currency_id,
@@ -57,9 +57,9 @@ async def get_all_expense_paginated(page_number, page_size):
 async def update_expense(expense_id,expense: expense_model.Expense):
     con = await create_connection()
     statement = await con.fetch(
-            "UPDATE expense SET expense_category_id = $1,cliam_reimbursement = $2,description = $3,reference_number = $4,currency_id = $5,merchant_id = $6,amount = $7,user_id = $8,updated_at = $9 WHERE id = $10 RETURNING id",
+            "UPDATE expense SET expense_category_id = $1,claim_reimbursement = $2,description = $3,reference_number = $4,currency_id = $5,merchant_id = $6,amount = $7,user_id = $8,updated_at = $9 WHERE id = $10 RETURNING id",
             expense.expense_category_id,
-            expense.cliam_reimbursement,
+            expense.claim_reimbursement,
             expense.description,
             expense.reference_number,
             expense.currency_id,

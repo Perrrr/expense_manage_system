@@ -6,6 +6,7 @@ class Users(BaseModel):
     user_id : Optional[int] = None 
     public_id : Optional[str] = None
     email : str
+    password : str
     prefix_mobile : str
     mobile_number : str 
     activated : bool
@@ -22,6 +23,7 @@ class Users(BaseModel):
 class CreateUserForm(BaseModel):
     public_id : Optional[str] = None
     email : str
+    password : str
     prefix_mobile : str
     mobile_number : str 
     activated : bool
@@ -31,6 +33,7 @@ class CreateUserForm(BaseModel):
         "example":
             {
             "email" : "panudet.@gmail.com",
+            "password" : "123123",
             "prefix_mobile" : "66",
             "mobile_number" : "9955777",
             "activated" : False,

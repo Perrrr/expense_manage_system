@@ -9,6 +9,7 @@ from app.models import users as user_model
 router = APIRouter()
 users_service = users.UsersService()
 
+
 @router.post("/")
 async def CreateUser(user: user_model.CreateUserForm):
     return await users_service.CreateUser(user)

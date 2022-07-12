@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS users (
     id serial primary key,
     public_id uuid not null unique,
     email varchar(80) not null unique,
+    password varchar(20) not null,
     prefix_mobile  varchar(10) not null,
     mobile_number varchar(80) not null unique,
     activated boolean not null default false,
@@ -135,7 +136,7 @@ CREATE TABLE IF NOT EXISTS departments_users (
 CREATE TABLE IF NOT EXISTS expense_categories (
     id serial primary key,
     public_id uuid not null unique,
-    organization_id integer not null,
+    organization_id integer not null,   
     avatar_icon varchar(80) not null,
     avatar_color varchar(80) not null,
     name varchar(80) not null,
@@ -200,7 +201,7 @@ CREATE TABLE IF NOT EXISTS expense(
     id serial primary key,
     public_id uuid not null unique,
     expense_category_id integer not null,
-    cliam_reimbursement boolean,
+    claim_reimbursement boolean,
     description text not null,
     reference_number varchar(80) not null,
     currency_id integer not null,
@@ -230,3 +231,61 @@ CREATE TABLE IF NOT EXISTS project_expense(
     updated_at timestamp default CURRENT_TIMESTAMP,
     deleted_at timestamp default NULL
 );
+
+CREATE TABLE IF NOT EXISTS budget (
+	id serial primary key,
+	public_id uuid not null unique,
+	budget numeric not null,
+	note varchar(80),
+	budget_period varchar(80),
+	currency_id integer
+	created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP,
+    deleted_at timestamp default NULL
+);
+
+CREATE TABLE IF NOT EXISTS user_budget (
+	id serial primary key,
+	budget_id integer not null,
+   	user_id integer not null,
+	status varchar(80) not null,
+	created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP,
+    deleted_at timestamp default NULL
+);
+
+CREATE TABLE IF NOT EXISTS department_budget (
+	id serial primary key,
+	budget_id integer not null,
+   	department_id integer not null,
+	status varchar(80) not null,
+	created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP,
+    deleted_at timestamp default NULL
+);
+
+CREATE TABLE IF NOT EXISTS category_budget (
+	id serial primary key,
+	budget_id integer not null,
+	name varchar(80) not null,
+    status varchar(80) not null,
+    avatar_icon varchar(80) not null,
+    avatar_color varchar(80) not null,
+    image_url varchar(80) not null,
+	created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP,
+    deleted_at timestamp default NULL 
+);
+
+CREATE TABLE IF NOT EXISTS department_category_budget (
+	id serial primary key,
+	department_id integer not null,
+	category_budget_id integer not null,
+	status varchar(80) not null,
+	created_at timestamp default CURRENT_TIMESTAMP,
+    updated_at timestamp default CURRENT_TIMESTAMP,
+    deleted_at timestamp default NULL 
+);
+
+
+
