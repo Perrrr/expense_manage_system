@@ -1,0 +1,19 @@
+from app.repository.organizations_users_roles import OrganizationsUserRoleRepository
+from app.models import organizations_users_roles as organization_user_role_model
+
+OrganizationsUserRoleRepository = OrganizationsUserRoleRepository()
+
+async def CreateOrganizationUserRole(organization_user_role: organization_user_role_model.CreateOrganizationUserRoleForm):
+    return await OrganizationsUserRoleRepository.create_organizations_users_roles(organization_user_role)
+
+async def GetOneOrganizationUserRole(organization_user_role_id):
+    return await OrganizationsUserRoleRepository.get_one_organization_user_role(organization_user_role_id)
+
+async def GetAllOrganizationsUsersRolesPaginated(page_number, page_size):
+    return await OrganizationsUserRoleRepository.get_all_organizations_users_roles_paginated(page_number, page_size)
+
+async def UpdateOrganizationUserRole(organization_user_role_id, organization_user_role: organization_user_role_model.CreateOrganizationUserRoleForm):
+    return await OrganizationsUserRoleRepository.update_organizations_users_roles(organization_user_role_id, organization_user_role)
+
+async def DeleteOrganizationUserRole(organization_user_role_id):
+    return await OrganizationsUserRoleRepository.delete_organizations_users_roles(organization_user_role_id)
